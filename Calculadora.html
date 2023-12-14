@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <script language="JavaScript">
+        var num1, num2, operator;
+
+        function buttonClick(value) {
+            document.frm.txtOutput.value += value;
+        }
+
+        function setOperator(op) {
+            num1 = parseFloat(frm.txtOutput.value);
+            operator = op;
+            frm.txtOutput.value = "";
+        }
+
+        function calculate() {
+            num2 = parseFloat(frm.txtOutput.value);
+            switch (operator) {
+                case "+": {
+                    frm.txtOutput.value = num1 + num2;
+                    break;
+                }
+                case "-": {
+                    frm.txtOutput.value = num1 - num2;
+                    break;
+                }
+                case "*": {
+                    frm.txtOutput.value = num1 * num2;
+                    break;
+                }
+                case "/": {
+                    frm.txtOutput.value = num1 / num2;
+                    break;
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        input[type=button] {
+            border-radius: 15px;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <form name="frm">
+            <input type="text" name="txtOutput" readonly><br>
+            <input type="button" name="btn1" value="1" onclick="buttonClick('1');">
+            <input type="button" name="btn2" value="2" onclick="buttonClick('2');">
+            <input type="button" name="btn3" value="3" onclick="buttonClick('3');">
+            <input type="button" name="btnAdd" value="+" onclick="setOperator('+');"> <br>
+            <input type="button" name="btn4" value="4" onclick="buttonClick('4');">
+            <input type="button" name="btn5" value="5" onclick="buttonClick('5');">
+            <input type="button" name="btn6" value="6" onclick="buttonClick('6');">
+            <input type="button" name="btnSub" value="-" onclick="setOperator('-');"> <br>
+            <input type="button" name="btn7" value="7" onclick="buttonClick('7');">
+            <input type="button" name="btn8" value="8" onclick="buttonClick('8');">
+            <input type="button" name="btn9" value="9" onclick="buttonClick('9');">
+            <input type="button" name="btnMul" value="*" onclick="setOperator('*');"> <br>
+            <input type="button" name="btn0" value="0" onclick="buttonClick('0');">
+            <input type="button" name="btnDot" value="." onclick="buttonClick('.');">
+            <input type="button" name="btnEquals" value="=" onclick="calculate();">
+            <input type="button" name="btnDiv" value="/" onclick="setOperator('/');"> <br>
+        </form>
+    </center>
+</body>
+
+</html>
